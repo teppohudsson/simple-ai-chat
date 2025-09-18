@@ -15,7 +15,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
         remarkPlugins={[remarkGfm]}
         components={{
           // Code blocks
-          code: ({ inline, className, children, ...props }) => {
+          code: ({ inline, className, children, ...props }: any) => {
             return !inline ? (
               <pre className="bg-gray-200 dark:bg-gray-800 rounded p-2 overflow-x-auto text-sm border">
                 <code className={className} {...props}>

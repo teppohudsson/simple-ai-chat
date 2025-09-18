@@ -12,7 +12,7 @@ export default function ChatInterface() {
   const [selectedModel, setSelectedModel] = useState(AVAILABLE_MODELS[0].id)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [streamingMessageId, setStreamingMessageId] = useState<string | null>(null)
+  const [streamingMessageId, setStreamingMessageId] = useState<string | undefined>(undefined)
 
   const generateId = () => Math.random().toString(36).substr(2, 9)
 
@@ -128,7 +128,7 @@ export default function ChatInterface() {
       // Remove the empty assistant message on error
       setMessages(prev => prev.filter(msg => msg.id !== assistantMessageId))
     } finally {
-      setStreamingMessageId(null)
+      setStreamingMessageId(undefined)
     }
   }, [messages, selectedModel])
 
@@ -143,7 +143,7 @@ export default function ChatInterface() {
         <ModelSelector
           selectedModel={selectedModel}
           onModelChange={handleModelChange}
-          disabled={streamingMessageId !== null}
+          disabled={streamingMessageId !== undefined}
         />
         {error && (
           <div className="mt-2 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md">
@@ -158,7 +158,7 @@ export default function ChatInterface() {
       
       <MessageInput
         onSendMessage={handleSendMessage}
-        disabled={streamingMessageId !== null}
+        disabled={streamingMessageId !== undefined}
         placeholder="Type your message here..."
       />
     </div>
