@@ -46,7 +46,7 @@ export default function Home() {
                   <div className="space-y-6">
                     <section>
                       <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
-                        Prompting guide
+                        Prompting guide spec 1
                       </h3>
                       <p className="text-gray-600 dark:text-gray-300 mb-3">
                         Think like you are simulating a conversation with a person within the supply chain
@@ -59,6 +59,24 @@ export default function Home() {
                         <li>I have a SAP ECC for warehouse management as the data source</li>
                         <li>please let me know 5 different data you need to do your job</li>
                         <li>What kind of output do you do provide for me, who is a vp of the factory</li>
+                        <li>So lets create a Capacity Forecasts. Provide me a sample data that is needed for it</li>
+                        <li>Alright. That data looks good. Create the report for me</li>
+                        <li>Explain the analysis process for the report</li>
+                        <li>Put this all together into a guidance prompt that then simulates the process with data step by step</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                        Prompting guide spec 2
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-300 mb-3">
+                        Think of providing a goal for the AI, and let it find its own way.
+                      </p>
+                      <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                        <li>Start with number 1</li>
+                        <li>While the number is below 10, continue doing anything except adding +1</li>
+                        <li>If number is 10 or more, print the number and explain how did you get there</li>
                       </ul>
                     </section>
 

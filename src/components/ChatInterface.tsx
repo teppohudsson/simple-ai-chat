@@ -139,7 +139,7 @@ export default function ChatInterface() {
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col h-full">
-      <div className="border-b border-gray-200 dark:border-gray-700">
+      <div className="px-2 border-b border-gray-200 dark:border-gray-700">
         <ModelSelector
           selectedModel={selectedModel}
           onModelChange={handleModelChange}
